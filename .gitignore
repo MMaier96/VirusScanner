@@ -1,1 +1,2 @@
- #ignore binary java files \n*.class
+ #ignore binary java files 
+ *.class
