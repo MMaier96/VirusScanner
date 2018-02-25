@@ -4,11 +4,13 @@ import static application.logger.Logger.printError;
 
 import application.directory.Directory;
 
-public abstract class File extends Directory{
+public abstract class File extends Directory implements IFile{
 
 	public File(String fileName) {
 		super(fileName);
 	}
+	
+	
 	
 	@Override
 	public void addUnit(Directory directory) {

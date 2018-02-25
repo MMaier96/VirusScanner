@@ -5,6 +5,8 @@ import application.directory.Folder;
 import application.directory.files.Document;
 import application.directory.files.DynamicLinkedLibrary;
 import application.directory.files.Executable;
+import application.virusscanner.IVirusScanner;
+import application.virusscanner.VirusScanner;
 
 import static application.logger.Logger.*;
 
@@ -62,7 +64,12 @@ public class Application {
 
 		printMessage("Printing the recursive structure of mainfolder ...");
 		partition.printStructure();
-
+		
+		
+		printMessage("Scanning all files recursivly ... ");
+		IVirusScanner virusScanner = new VirusScanner();
+		partition.scanRecursive(virusScanner);
+		
 		printMessage(" Application finished! ");
 	}
 }

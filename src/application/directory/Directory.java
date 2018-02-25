@@ -5,6 +5,8 @@ import java.util.List;
 
 import application.Application;
 import application.directory.files.File;
+import application.directory.files.IFile;
+import application.virusscanner.IVirusScanner;
 
 public abstract class Directory {
 	protected int indentDepth = 0;
@@ -66,5 +68,15 @@ public abstract class Directory {
 
 	private void setParent(Directory directory) {
 		parentUnit = directory;
+	}
+
+	public void scanRecursive(IVirusScanner virusScanner) {
+		if (this instanceof IFile) {
+			virusScanner.visit(this);
+			return;
+		}
+		for (Directory directory : units) {
+			directory.scanRecursive(virusScanner);
+		}		
 	}
 }
