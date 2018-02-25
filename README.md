@@ -5,3 +5,6 @@
 vom Typ Verzeichnis. Es existieren die Dateitypen exe, dll und doc. Der Virenscanner ermöglicht
 das Scannen aller Dateien oder eines bestimmen Dateityps.
 > *Used Design Patterns*: Composite, Visitor
+
+ ## UML Class Diagram
+ ![UML Class Diagram](uml/UML_Class_Diagram.svg)
